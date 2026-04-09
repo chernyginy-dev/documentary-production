@@ -527,6 +527,9 @@
         box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7);
         z-index: 10;
       }
+      .film-card:nth-child(2):hover {
+        transform: translateX(-50%) scale(1.04) !important;
+      }
       .film-card img {
         width: 100%;
         height: 100%;
@@ -1151,6 +1154,10 @@
         .lang-switch {
           display: none;
         }
+        .mobile-menu .social-icons,
+        .mobile-menu .lang-switch {
+          display: flex;
+        }
         .burger {
           display: flex;
         }
@@ -1246,11 +1253,31 @@
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu">
       <ul>
-        <li><a href="#films" onclick="closeMobile()">Films</a></li>
-        <li><a href="#productions" onclick="closeMobile()">Productions</a></li>
-        <li><a href="#about" onclick="closeMobile()">Collaborate</a></li>
+        <li><a href="#films">Films</a></li>
+        <li><a href="#productions">Productions</a></li>
+        <li><a href="#about">Collaborate</a></li>
       </ul>
       <div class="mobile-menu-footer">
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Vimeo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 7c-.1 2.2-1.6 5.3-4.5 9.2C14.5 20.4 11.9 22 9.7 22c-1.4 0-2.5-1.3-3.5-3.8L4.6 12C3.9 9.5 3.1 8.2 2.2 8.2c-.2 0-.9.4-2.2 1.3L0 8.2C1.4 7 2.8 5.8 4.1 4.7c1.8-1.5 3.1-2.3 4-2.4 2.1-.2 3.4 1.2 3.9 4.2.5 3.2.9 5.2 1.1 6 .6 2.7 1.3 4 2 4 .6 0 1.4-.9 2.6-2.6 1.1-1.7 1.7-3 1.8-3.9.2-1.5-.4-2.2-1.8-2.2-.6 0-1.3.1-2 .4 1.3-4.3 3.8-6.4 7.5-6.2" />
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="5" width="20" height="14" rx="3" />
+              <polygon points="10,9 10,15 16,12" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+        </div>
         <div class="lang-switch">
           <button class="active" onclick="setLang('EN')">EN</button>
           <span>/</span>
@@ -1761,7 +1788,7 @@
 
         // Header bg
         if (scrollY > 50) header.classList.add("scrolled");
-        else header.classList.reMOVIE("scrolled");
+        else header.classList.remove("scrolled");
 
         // Hero fade out + header logo fade in
         const progress = Math.min(scrollY / (heroH * 0.5), 1);
@@ -1771,7 +1798,7 @@
         if (progress > 0.4) {
           headerLogo.classList.add("visible");
         } else {
-          headerLogo.classList.reMOVIE("visible");
+          headerLogo.classList.remove("visible");
         }
       });
 
@@ -1825,9 +1852,15 @@
           txt.textContent = "Collapse";
           btn.classList.add("open");
         } else {
-          hiddenItems.forEach((item) => item.classList.reMOVIE("revealed"));
+          hiddenItems.forEach((item) => {
+            item.classList.remove("revealed");
+            item.style.display = "none";
+            // Force reflow then reset to allow re-animation next open
+            void item.offsetHeight;
+            item.style.display = "";
+          });
           txt.textContent = "See more";
-          btn.classList.reMOVIE("open");
+          btn.classList.remove("open");
         }
       }
 
@@ -1842,10 +1875,14 @@
           : "";
       }
       function closeMobile() {
-        burger.classList.reMOVIE("open");
-        mobileMenu.classList.reMOVIE("open");
+        burger.classList.remove("open");
+        mobileMenu.classList.remove("open");
         document.body.style.overflow = "";
       }
+      // Close mobile menu on nav link click
+      mobileMenu.querySelectorAll("a[href]").forEach((link) => {
+        link.addEventListener("click", () => { closeMobile(); });
+      });
 
       /* ─── LANGUAGE SWITCH ─── */
       function setLang(lang) {

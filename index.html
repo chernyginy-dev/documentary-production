@@ -32,7 +32,7 @@
         --gold-dim: #7a6148;
         --white: #f0e8dc;
         --font-display: "Syncopate", sans-serif;
-        --font-serif: "Cormorant Garamond", serif;
+        --font-mono: "Cormorant Garamond", serif; /* delete */
         --font-mono: "Space Mono", monospace;
       }
       html {
@@ -41,7 +41,7 @@
       body {
         background: var(--black);
         color: var(--cream);
-        font-family: var(--font-serif);
+        font-family: var(--font-mono);
         overflow-x: hidden;
         font-size: 18px;
       }
@@ -81,12 +81,13 @@
         display: flex;
         flex-direction: column;
         animation: stripScroll 12s linear infinite;
+        opacity: 0.09;
       }
       .filmstrip.right .filmstrip-track {
         animation-direction: reverse;
       }
       .strip-hole {
-        width: 30px;
+        width: 22px;
         height: 22px;
         border: 2px solid var(--white);
         margin: 6px 4px;
@@ -384,7 +385,7 @@
       }
 
       .hero-tagline {
-        font-family: var(--font-serif);
+        font-family: var(--font-mono);
         font-size: clamp(14px, 2vw, 20px);
         font-weight: 300;
         letter-spacing: 0.18em;
@@ -491,7 +492,7 @@
         margin-bottom: 80px;
       }
       .films-title {
-        font-family: var(--font-serif);
+        font-family: var(--font-mono);
         font-size: clamp(36px, 5vw, 64px);
         font-weight: 300;
         color: var(--cream);
@@ -686,7 +687,7 @@
         align-items: end;
       }
       .productions-title {
-        font-family: var(--font-serif);
+        font-family: var(--font-mono);
         font-size: clamp(32px, 4vw, 56px);
         font-weight: 300;
         color: var(--cream);
@@ -757,7 +758,7 @@
         margin-bottom: 10px;
       }
       .prod-title {
-        font-family: var(--font-serif);
+        font-family: var(--font-mono);
         font-size: 22px;
         font-weight: 400;
         color: var(--cream);
@@ -781,7 +782,7 @@
         gap: 6px;
       }
       .rating-score {
-        font-family: var(--font-serif);
+        font-family: var(--font-mono);
         font-size: 38px;
         font-weight: 300;
         color: var(--gold);
@@ -896,7 +897,7 @@
         align-items: center;
       }
       .about-quote {
-        font-family: var(--font-serif);
+        font-family: var(--font-mono);
         font-size: clamp(26px, 3.5vw, 48px);
         font-weight: 300;
         color: var(--cream);
@@ -912,7 +913,7 @@
         content: '"';
         font-size: 120px;
         color: rgba(184, 151, 106, 0.08);
-        font-family: var(--font-serif);
+        font-family: var(--font-mono);
         position: absolute;
         top: -40px;
         left: -20px;
@@ -941,7 +942,7 @@
       .stat-item {
       }
       .stat-number {
-        font-family: var(--font-serif);
+        font-family: var(--font-mono);
         font-size: 40px;
         font-weight: 300;
         color: var(--gold);
@@ -1015,7 +1016,7 @@
         gap: 20px;
       }
       .footer-tagline {
-        font-family: var(--font-serif);
+        font-family: var(--font-mono);
         font-size: 16px;
         color: var(--bone);
         line-height: 1.7;
@@ -1140,10 +1141,10 @@
       /* ─── RESPONSIVE ─── */
       @media (max-width: 960px) {
         header {
-          padding: 24px 28px;
+          padding: 24px 32px;
         }
         header.scrolled {
-          padding: 16px 28px;
+          padding: 16px 32px;
         }
         nav,
         .social-icons,
@@ -1155,7 +1156,7 @@
         }
 
         #films {
-          padding: 100px 28px;
+          padding: 100px 32px;
         }
         .films-orbit {
           height: auto;
@@ -1177,7 +1178,7 @@
         }
 
         #productions {
-          padding: 80px 28px;
+          padding: 80px 32px;
         }
         .productions-header {
           grid-template-columns: 1fr;
@@ -1191,7 +1192,7 @@
         }
 
         #about {
-          padding: 100px 28px;
+          padding: 100px 32px;
         }
         .about-inner {
           grid-template-columns: 1fr;
@@ -1202,7 +1203,7 @@
         }
 
         footer {
-          padding: 60px 28px 36px;
+          padding: 60px 32px 36px;
         }
         .footer-inner {
           grid-template-columns: 1fr;

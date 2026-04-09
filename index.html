@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OBSCURA — Documentary Studio</title>
+    <title>MOVIE — Documentary Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,7 +26,7 @@
         --ash: #2c2825;
         --dust: #4a4540;
         --smoke: #8a7f75;
-        --bone: #c8bfb2;
+        --bone: #d1cec9;
         --cream: #e8dfd2;
         --gold: #b8976a;
         --gold-dim: #7a6148;
@@ -40,47 +40,10 @@
       }
       body {
         background: var(--black);
-        color: var(--bone);
+        color: var(--cream);
         font-family: var(--font-serif);
         overflow-x: hidden;
-        cursor: none;
-      }
-
-      /* ─── CUSTOM CURSOR ─── */
-      .cursor {
-        width: 8px;
-        height: 8px;
-        background: var(--gold);
-        border-radius: 50%;
-        position: fixed;
-        pointer-events: none;
-        z-index: 9999;
-        transform: translate(-50%, -50%);
-        transition:
-          transform 0.1s ease,
-          width 0.3s ease,
-          height 0.3s ease,
-          opacity 0.3s ease;
-        mix-blend-mode: difference;
-      }
-      .cursor-ring {
-        width: 36px;
-        height: 36px;
-        border: 1px solid rgba(184, 151, 106, 0.4);
-        border-radius: 50%;
-        position: fixed;
-        pointer-events: none;
-        z-index: 9998;
-        transform: translate(-50%, -50%);
-        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-      }
-      body:hover .cursor {
-        opacity: 1;
-      }
-      a:hover ~ .cursor,
-      button:hover ~ .cursor {
-        width: 16px;
-        height: 16px;
+        font-size: 18px;
       }
 
       /* ─── FILM GRAIN CANVAS ─── */
@@ -197,7 +160,7 @@
       }
       nav ul li a {
         font-family: var(--font-display);
-        font-size: 9px;
+        font-size: 14px;
         letter-spacing: 0.25em;
         color: var(--smoke);
         text-decoration: none;
@@ -214,7 +177,7 @@
         align-items: center;
       }
       .social-icons a {
-        color: var(--dust);
+        color: var(--bone);
         transition: color 0.3s ease;
         display: flex;
         align-items: center;
@@ -230,18 +193,19 @@
       .lang-switch {
         display: flex;
         gap: 0;
+        margin: 2px 0 0;
         font-family: var(--font-display);
-        font-size: 8px;
         letter-spacing: 0.2em;
       }
       .lang-switch button {
         background: none;
         border: none;
-        color: var(--dust);
+        color: var(--bone);
         cursor: pointer;
         padding: 4px 6px;
         font-family: inherit;
-        font-size: inherit;
+        font-size: 15px;
+        line-height: 1.2;
         letter-spacing: inherit;
         transition: color 0.3s ease;
       }
@@ -249,7 +213,7 @@
         color: var(--gold);
       }
       .lang-switch span {
-        color: var(--ash);
+        color: var(--bone);
         align-self: center;
       }
 
@@ -307,7 +271,7 @@
       }
       .mobile-menu ul li a {
         font-family: var(--font-display);
-        font-size: 13px;
+        font-size: 16px;
         letter-spacing: 0.3em;
         color: var(--bone);
         text-decoration: none;
@@ -425,7 +389,7 @@
         font-size: clamp(14px, 2vw, 20px);
         font-weight: 300;
         letter-spacing: 0.18em;
-        color: var(--smoke);
+        color: var(--cream);
         margin-top: 28px;
         line-height: 1.6;
         max-width: 480px;
@@ -435,9 +399,9 @@
 
       .hero-sub {
         font-family: var(--font-display);
-        font-size: 8px;
+        font-size: 10px;
         letter-spacing: 0.35em;
-        color: var(--gold-dim);
+        color: var(--gold);
         margin-top: 40px;
         text-transform: uppercase;
         display: flex;
@@ -499,7 +463,7 @@
       }
       .section-label {
         font-family: var(--font-display);
-        font-size: 8px;
+        font-size: 10px;
         letter-spacing: 0.4em;
         color: var(--gold-dim);
         text-transform: uppercase;
@@ -537,8 +501,8 @@
       }
       .films-count {
         font-family: var(--font-mono);
-        font-size: 11px;
-        color: var(--dust);
+        font-size: 14px;
+        color: var(--bone);
         letter-spacing: 0.1em;
         padding-bottom: 8px;
       }
@@ -554,7 +518,6 @@
         position: absolute;
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.04);
-        cursor: none;
         transition:
           transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
           box-shadow 0.6s ease;
@@ -731,7 +694,7 @@
         line-height: 1.15;
       }
       .productions-desc {
-        font-size: 15px;
+        font-size: 18px;
         color: var(--smoke);
         line-height: 1.8;
         font-weight: 300;
@@ -745,7 +708,6 @@
         align-items: center;
         padding: 32px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.06);
-        cursor: none;
         transition: border-color 0.3s ease;
         position: relative;
         overflow: hidden;
@@ -790,9 +752,9 @@
       }
       .prod-year {
         font-family: var(--font-mono);
-        font-size: 9px;
+        font-size: 14px;
         letter-spacing: 0.15em;
-        color: var(--gold-dim);
+        color: var(--gold);
         margin-bottom: 10px;
       }
       .prod-title {
@@ -804,8 +766,9 @@
         letter-spacing: 0.02em;
       }
       .prod-desc {
-        font-size: 13px;
-        color: var(--dust);
+        font-size: 18px;
+
+        color: var(--bone);
         line-height: 1.7;
         font-weight: 300;
         max-width: 480px;
@@ -843,7 +806,7 @@
         font-family: var(--font-display);
         font-size: 7px;
         letter-spacing: 0.2em;
-        color: var(--dust);
+        color: var(--bone);
       }
 
       /* Hidden items */
@@ -874,10 +837,9 @@
         margin-top: 48px;
         background: none;
         border: none;
-        cursor: none;
         color: var(--smoke);
         font-family: var(--font-display);
-        font-size: 9px;
+        font-size: 14px;
         letter-spacing: 0.3em;
         text-transform: uppercase;
         padding: 0;
@@ -964,8 +926,7 @@
         gap: 40px;
       }
       .about-text {
-        font-size: 15px;
-        color: var(--smoke);
+        color: var(--bone);
         line-height: 1.9;
         font-weight: 300;
         letter-spacing: 0.02em;
@@ -990,9 +951,9 @@
       }
       .stat-label {
         font-family: var(--font-display);
-        font-size: 8px;
+        font-size: 10px;
         letter-spacing: 0.25em;
-        color: var(--dust);
+        color: var(--bone);
       }
 
       .cta-collaborate {
@@ -1003,14 +964,13 @@
         border: 1px solid rgba(184, 151, 106, 0.3);
         color: var(--gold);
         font-family: var(--font-display);
-        font-size: 9px;
+        font-size: 14px;
         letter-spacing: 0.3em;
         text-transform: uppercase;
         text-decoration: none;
         transition: all 0.4s ease;
         position: relative;
         overflow: hidden;
-        cursor: none;
         align-self: flex-start;
       }
       .cta-collaborate::before {
@@ -1057,8 +1017,8 @@
       }
       .footer-tagline {
         font-family: var(--font-serif);
-        font-size: 13px;
-        color: var(--dust);
+        font-size: 16px;
+        color: var(--bone);
         line-height: 1.7;
         font-weight: 300;
         max-width: 240px;
@@ -1067,13 +1027,13 @@
       .footer-nav {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 16px;
       }
       .footer-nav a {
         font-family: var(--font-display);
-        font-size: 8px;
+        font-size: 10px;
         letter-spacing: 0.25em;
-        color: var(--dust);
+        color: var(--bone);
         text-decoration: none;
         text-transform: uppercase;
         transition: color 0.3s ease;
@@ -1093,7 +1053,7 @@
         font-family: var(--font-display);
         font-size: 28px;
         font-weight: 700;
-        color: var(--ash);
+        color: var(--bone);
         letter-spacing: 0.2em;
         transition: color 0.4s ease;
       }
@@ -1102,9 +1062,9 @@
       }
       .footer-year {
         font-family: var(--font-mono);
-        font-size: 9px;
+        font-size: 18px;
         letter-spacing: 0.15em;
-        color: var(--ash);
+        color: var(--bone);
       }
 
       .footer-right {
@@ -1115,10 +1075,10 @@
       }
       .footer-social {
         display: flex;
-        gap: 20px;
+        gap: 26px;
       }
       .footer-social a {
-        color: var(--ash);
+        color: var(--bone);
         transition: color 0.3s ease;
         display: flex;
       }
@@ -1126,8 +1086,8 @@
         color: var(--gold);
       }
       .footer-social svg {
-        width: 15px;
-        height: 15px;
+        width: 26px;
+        height: 26px;
       }
 
       .footer-bottom {
@@ -1139,9 +1099,9 @@
       }
       .footer-copy {
         font-family: var(--font-mono);
-        font-size: 9px;
+        font-size: 14px;
         letter-spacing: 0.1em;
-        color: var(--ash);
+        color: var(--bone);
       }
       .footer-strip {
         display: flex;
@@ -1272,10 +1232,6 @@
     </style>
   </head>
   <body>
-    <!-- Cursor -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
-
     <!-- Film grain canvas -->
     <canvas id="grain"></canvas>
 
@@ -1292,7 +1248,6 @@
       <ul>
         <li><a href="#films" onclick="closeMobile()">Films</a></li>
         <li><a href="#productions" onclick="closeMobile()">Productions</a></li>
-        <li><a href="#about" onclick="closeMobile()">About</a></li>
         <li><a href="#about" onclick="closeMobile()">Collaborate</a></li>
       </ul>
       <div class="mobile-menu-footer">
@@ -1306,13 +1261,12 @@
 
     <!-- Header -->
     <header id="header">
-      <a href="#hero" class="header-logo" id="headerLogo">OBSCURA</a>
+      <a href="#hero" class="header-logo" id="headerLogo">MOVIE</a>
       <div class="header-right">
         <nav>
           <ul>
             <li><a href="#films">Films</a></li>
             <li><a href="#productions">Productions</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#about">Collaborate</a></li>
           </ul>
         </nav>
@@ -1385,7 +1339,7 @@
 
       <div class="hero-content" id="heroContent">
         <div class="hero-sub">Est. 2015</div>
-        <h1 class="hero-logo-main">OBSCURA</h1>
+        <h1 class="hero-logo-main">MOVIE</h1>
         <p class="hero-tagline">
           Where forgotten truths<br />find their voice on screen
         </p>
@@ -1636,10 +1590,10 @@
             <span>Who We Are</span>
           </div>
           <p class="about-text reveal reveal-delay-1">
-            OBSCURA is an independent documentary production studio founded on
-            the belief that truth is the most radical form of storytelling. We
-            work at the intersection of cinema, journalism, and art — crafting
-            films that demand attention and provoke thought.
+            MOVIE is an independent documentary production studio founded on the
+            belief that truth is the most radical form of storytelling. We work
+            at the intersection of cinema, journalism, and art — crafting films
+            that demand attention and provoke thought.
           </p>
           <p class="about-text reveal reveal-delay-2">
             From long-form investigations to intimate short portraits, every
@@ -1665,7 +1619,7 @@
             </div>
           </div>
           <a
-            href="mailto:hello@obscura.studio"
+            href="mailto:hello@MOVIE.studio"
             class="cta-collaborate reveal reveal-delay-2"
           >
             Let's create together
@@ -1686,12 +1640,12 @@
             <a href="#films">Selected Works</a>
             <a href="#productions">Productions</a>
             <a href="#about">About the Studio</a>
-            <a href="mailto:hello@obscura.studio">Collaborate</a>
+            <a href="mailto:hello@MOVIE.studio">Collaborate</a>
           </nav>
         </div>
         <div class="footer-center reveal">
           <div class="footer-logo-symbol">◉</div>
-          <div class="footer-year">MMXV — MMXXVI</div>
+          <div class="footer-year">MOVIE</div>
         </div>
         <div class="footer-right reveal reveal-delay-1">
           <div class="footer-social">
@@ -1741,23 +1695,11 @@
               </svg>
             </a>
           </div>
-          <p
-            style="
-              font-family: var(--font-mono);
-              font-size: 9px;
-              letter-spacing: 0.1em;
-              color: var(--ash);
-            "
-          >
-            hello@obscura.studio
-          </p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div class="footer-copy">
-          © 2026 Obscura Studio. All rights reserved.
-        </div>
+        <div class="footer-copy">© 2026 MOVIE Studio. All rights reserved.</div>
         <div class="footer-strip">
           <div class="footer-strip-frame"></div>
           <div class="footer-strip-frame"></div>
@@ -1772,39 +1714,6 @@
     </footer>
 
     <script>
-      /* ─── CUSTOM CURSOR ─── */
-      const cursor = document.getElementById("cursor");
-      const cursorRing = document.getElementById("cursorRing");
-      let mx = 0,
-        my = 0,
-        rx = 0,
-        ry = 0;
-      document.addEventListener("mousemove", (e) => {
-        mx = e.clientX;
-        my = e.clientY;
-      });
-      (function animateCursor() {
-        rx += (mx - rx) * 0.12;
-        ry += (my - ry) * 0.12;
-        cursor.style.left = mx + "px";
-        cursor.style.top = my + "px";
-        cursorRing.style.left = rx + "px";
-        cursorRing.style.top = ry + "px";
-        requestAnimationFrame(animateCursor);
-      })();
-      document
-        .querySelectorAll("a, button, .film-card, .production-item")
-        .forEach((el) => {
-          el.addEventListener("mouseenter", () => {
-            cursorRing.style.transform = "translate(-50%,-50%) scale(1.6)";
-            cursor.style.opacity = "0";
-          });
-          el.addEventListener("mouseleave", () => {
-            cursorRing.style.transform = "translate(-50%,-50%) scale(1)";
-            cursor.style.opacity = "1";
-          });
-        });
-
       /* ─── FILM GRAIN ─── */
       const canvas = document.getElementById("grain");
       const ctx = canvas.getContext("2d");
@@ -1852,7 +1761,7 @@
 
         // Header bg
         if (scrollY > 50) header.classList.add("scrolled");
-        else header.classList.remove("scrolled");
+        else header.classList.reMOVIE("scrolled");
 
         // Hero fade out + header logo fade in
         const progress = Math.min(scrollY / (heroH * 0.5), 1);
@@ -1862,7 +1771,7 @@
         if (progress > 0.4) {
           headerLogo.classList.add("visible");
         } else {
-          headerLogo.classList.remove("visible");
+          headerLogo.classList.reMOVIE("visible");
         }
       });
 
@@ -1916,9 +1825,9 @@
           txt.textContent = "Collapse";
           btn.classList.add("open");
         } else {
-          hiddenItems.forEach((item) => item.classList.remove("revealed"));
+          hiddenItems.forEach((item) => item.classList.reMOVIE("revealed"));
           txt.textContent = "See more";
-          btn.classList.remove("open");
+          btn.classList.reMOVIE("open");
         }
       }
 
@@ -1933,8 +1842,8 @@
           : "";
       }
       function closeMobile() {
-        burger.classList.remove("open");
-        mobileMenu.classList.remove("open");
+        burger.classList.reMOVIE("open");
+        mobileMenu.classList.reMOVIE("open");
         document.body.style.overflow = "";
       }
 

@@ -1220,6 +1220,7 @@ footer {
   color: var(--gold-dim);
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: bold;
   transition:
     color 0.3s ease,
     gap 0.3s ease;
@@ -1841,6 +1842,7 @@ footer {
   color: var(--dust);
   letter-spacing: 0.1em;
 }
+.film-footer-back,
 .next-film {
   font-family: var(--font-display);
   font-size: 12px;
@@ -1853,6 +1855,7 @@ footer {
   gap: 10px;
   transition: color 0.3s;
 }
+.film-footer-back:hover,
 .next-film:hover {
   color: var(--gold);
 }

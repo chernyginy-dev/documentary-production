@@ -3,8 +3,6 @@
 /* ───────────────── DOM ───────────────── */
 const header =
   document.getElementById("site-header") || document.getElementById("header");
-const navToggle = document.getElementById("nav-toggle");
-const navMenu = document.getElementById("nav-menu");
 const navLinks = document.querySelectorAll(".nav__link");
 const yearEl = document.getElementById("year");
 
@@ -17,18 +15,15 @@ if (yearEl) {
 window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
 
-  // Header
   if (header) {
     header.classList.toggle("scrolled", scrollY > 50);
   }
 
-  // Film nav
   const filmNav = document.getElementById("filmNav");
   if (filmNav) {
     filmNav.classList.toggle("scrolled", scrollY > 60);
   }
 
-  // Hero fade
   const hero = document.getElementById("hero");
   const heroContent = document.getElementById("heroContent");
   const headerLogo = document.getElementById("headerLogo");
@@ -42,7 +37,6 @@ window.addEventListener("scroll", () => {
     headerLogo.classList.toggle("visible", progress > 0.4);
   }
 
-  // Parallax beams
   const beams = document.querySelectorAll(".hero-beam");
   if (beams.length) {
     const s = scrollY * 0.15;
@@ -52,30 +46,37 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/* ─── MOBILE NAV ─── */
-function toggleMenu(forceClose = false) {
-  if (!navMenu || !navToggle) return;
+/* ─── MOBILE MENU (FINAL CLEAN VERSION) ─── */
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
 
-  const isOpen = navMenu.classList.contains("is-open");
-
-  if (forceClose || isOpen) {
-    navMenu.classList.remove("is-open");
-    navToggle.classList.remove("open");
-    document.body.style.overflow = "";
-  } else {
-    navMenu.classList.add("is-open");
-    navToggle.classList.add("open");
-    document.body.style.overflow = "hidden";
-  }
+function openMenu() {
+  burger.classList.add("open");
+  mobileMenu.classList.add("open");
+  document.body.style.overflow = "hidden";
 }
 
-if (navToggle) {
-  navToggle.addEventListener("click", () => toggleMenu());
+function closeMenu() {
+  burger.classList.remove("open");
+  mobileMenu.classList.remove("open");
+  document.body.style.overflow = "";
 }
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => toggleMenu(true));
-});
+function toggleMenu() {
+  const isOpen = mobileMenu.classList.contains("open");
+  isOpen ? closeMenu() : openMenu();
+}
+
+if (burger && mobileMenu) {
+  burger.addEventListener("click", toggleMenu);
+
+  // 🔥 ВАЖЛИВО: закриття при кліку на пункт меню
+  mobileMenu.querySelectorAll("a[href]").forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
+}
 
 /* ─── SMOOTH SCROLL ─── */
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
@@ -92,7 +93,7 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
   });
 });
 
-/* ─── SCROLL REVEAL (ЄДИНА ВЕРСІЯ) ─── */
+/* ─── SCROLL REVEAL ─── */
 const revealEls = document.querySelectorAll(".reveal");
 
 if (revealEls.length) {
@@ -158,7 +159,7 @@ function buildStrip(id) {
 buildStrip("stripLeft");
 buildStrip("stripRight");
 
-/* ─── FILMS ORBIT ANIMATION ─── */
+/* ─── FILMS ORBIT ─── */
 const filmsOrbit = document.getElementById("filmsOrbit");
 
 if (filmsOrbit) {
@@ -179,7 +180,7 @@ if (filmsOrbit) {
   observer.observe(filmsOrbit);
 }
 
-/* ─── PRODUCTIONS SEE MORE ─── */
+/* ─── PRODUCTIONS ─── */
 let productionsOpen = false;
 
 window.toggleProductions = function () {
@@ -198,20 +199,6 @@ window.toggleProductions = function () {
   if (btn) btn.classList.toggle("open", productionsOpen);
 };
 
-/* ─── MOBILE MENU (ALT VERSION) ─── */
-const mobileMenu = document.getElementById("mobileMenu");
-const burger = document.getElementById("burger");
-
-if (burger && mobileMenu) {
-  burger.addEventListener("click", () => {
-    burger.classList.toggle("open");
-    mobileMenu.classList.toggle("open");
-    document.body.style.overflow = mobileMenu.classList.contains("open")
-      ? "hidden"
-      : "";
-  });
-}
-
 /* ─── LANGUAGE SWITCH ─── */
 window.setLang = function (lang) {
   document.querySelectorAll(".lang-switch button").forEach((btn) => {
@@ -219,7 +206,7 @@ window.setLang = function (lang) {
   });
 };
 
-/* ─── FILM ACCORDION + HASH ─── */
+/* ─── FILM ACCORDION ─── */
 (function () {
   const cards = document.querySelectorAll(".film-card[data-film]");
   if (!cards.length) return;

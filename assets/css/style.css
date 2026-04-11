@@ -550,7 +550,7 @@ section {
 }
 .film-expand-genre {
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.3em;
   color: var(--gold);
   text-transform: uppercase;
@@ -1611,7 +1611,7 @@ footer {
 }
 .section-label {
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.4em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -1690,7 +1690,7 @@ footer {
 }
 .trailer-placeholder p {
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.3em;
   color: var(--smoke);
   text-transform: uppercase;
@@ -1703,7 +1703,7 @@ footer {
 }
 .info-block h3 {
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.35em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -1799,7 +1799,7 @@ footer {
 }
 .broadcasters h4 {
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.35em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -1815,7 +1815,7 @@ footer {
   background: var(--deep);
   border: 1px solid rgba(255, 255, 255, 0.04);
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.25em;
   color: var(--smoke);
   text-transform: uppercase;
@@ -1843,7 +1843,7 @@ footer {
 }
 .next-film {
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.3em;
   color: var(--smoke);
   text-decoration: none;
@@ -2089,7 +2089,7 @@ footer {
 }
 .film-entry-meta {
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.25em;
   color: var(--smoke);
   text-transform: uppercase;

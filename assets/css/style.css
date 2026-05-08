@@ -542,7 +542,7 @@ section {
   opacity: 1;
 }
 .film-expand-inner {
-  padding: 20px 16px 16px;
+  padding: 20px 16px 15px;
   display: flex;
   flex-direction: column;
   gap: 8px;

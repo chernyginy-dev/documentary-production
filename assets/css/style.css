@@ -4792,8 +4792,8 @@ footer#footer {
 
 @media (max-width: 768px) {
   .prod-row {
-    grid-template-columns: 64px 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 12px;
   }
   .prod-rating {
